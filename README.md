@@ -1,5 +1,5 @@
 # a_ring_of_numbers
-Given a positive integer n, compute the ring(s) composed by the numbers 1 - n, such that the sum of each two neighboring numbers is a prime, where 1 &lt;= n &lt;= 17.
+Given a positive integer n, compute the circle(s) composed by the numbers from 1 to n, such that the sum of each two neighboring numbers on the circle is a prime, where 1 &lt;= n &lt;= 17.
 
 ```
 g++ ring_with_prime_sum.cpp -o ring_with_prime_sum

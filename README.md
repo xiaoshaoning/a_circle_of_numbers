@@ -1,4 +1,4 @@
-# a_ring_of_numbers
+# a_circle_of_numbers
 Given a positive integer n, compute the circle(s) composed by the numbers from 1 to n, such that the sum of each two neighboring numbers on the circle is a prime, where 1 &lt;= n &lt;= 17.
 
 ```

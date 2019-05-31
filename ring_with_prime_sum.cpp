@@ -1,6 +1,6 @@
 /*
- * Given an positive integer n, compute the ring(s) composed by the numbers 1 - n, such that
- * the sum of each two neighboring numbers is a prime, where 1 <= n <= 17.
+ * Given an positive integer n, compute the circle(s) composed by the numbers 1 - n, such that
+ * the sum of each two neighboring numbers on the circle is a prime, where 1 <= n <= 17.
  * Please print the number of ring(s) in a line with 1 is in the first position and any neighboring numbers
  * are seperated by a space. Please output the number of the solutions on the last row or "no answer" in the case
  * of no solution.

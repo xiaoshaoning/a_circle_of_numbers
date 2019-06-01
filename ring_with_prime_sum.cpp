@@ -331,6 +331,9 @@ bool is_prime(int k)
 {
     int ii;
 
+    if (k == 2)
+        return true;
+
     for (ii = 2; ii <= sqrt(k); ii++)
     {
         if (floor(k/ii) * ii == k)

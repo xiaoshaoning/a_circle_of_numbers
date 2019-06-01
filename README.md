@@ -2,7 +2,7 @@
 Given a positive integer n, compute the circle(s) composed by the numbers from 1 to n, such that the sum of each two neighboring numbers on the circle is a prime, where 1 &lt;= n &lt;= 17.
 
 ```
-g++ ring_with_prime_sum.cpp -o ring_with_prime_sum
+make
 ./ring_with_prime_sum
 
 input:

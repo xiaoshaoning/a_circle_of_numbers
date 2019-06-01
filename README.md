@@ -3,7 +3,7 @@ Given a positive integer n, compute the circle(s) composed by the numbers from 1
 
 ```
 make
-./ring_with_prime_sum
+./circle_with_prime_sum
 
 input:
 8

@@ -1,4 +1,4 @@
-ring_with_prime_sum : ring_with_prime_sum.cpp
-	g++ -o ring_with_prime_sum ring_with_prime_sum.cpp
+circle_with_prime_sum : circle_with_prime_sum.cpp
+	g++ -o circle_with_prime_sum circle_with_prime_sum.cpp
 clean:
-	rm -rf ring_with_prime_sum
+	rm -rf circle_with_prime_sum

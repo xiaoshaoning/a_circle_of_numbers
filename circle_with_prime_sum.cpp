@@ -28,7 +28,6 @@ bool is_valid_stack(int my_stack[], int stack_size, int m);
 int main()
 {
     int n;
-    int total_answer_number;
 
     int stack[17];
     int stack_size;

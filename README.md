@@ -14,3 +14,5 @@ output:
 1 6 7 4 3 8 5 2
 4
 ```
+
+Please refer to [Write a program to print all permutations of a given string](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/) for the algorithm involved.

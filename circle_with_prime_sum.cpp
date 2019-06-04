@@ -14,314 +14,28 @@
 using namespace std;
 
 bool is_prime(int);
-
-int stack_push(int my_stack[], int stack_size, int element);
-
-int stack_pop(int my_stack[], int stack_size);
-
-bool is_inside(int my_stack[], int current_stack_size, int element);
-
-void display(int my_stack[], int stack_size);
-
-bool is_valid_stack(int my_stack[], int stack_size, int m);
+void display(int my_list[], int list_size);
+bool is_valid_list(int my_list[], int list_size, int m);
+void swap(int list[], int i, int j);
+int permute(int list[], int list_size, int l, int r, int answer_number);
 
 int main()
 {
+    int list[17] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
     int n;
+    int total_answer_number;
 
-    int stack[17];
-    int stack_size;
-
-    int ii, jj, kk;
-
-    int a[17];
-
-    int total_answer = 0;
-
-    cout<<"input:"<<endl;
+    cout<<"Please input n:"<<endl;
     cin>>n;
-    //cout<<"n is "<<n<<endl;
 
     if (n > 17)
     {
-        cout<<"The input number shall be less than 17."<<endl;
+        cout<<"Please input a number less than 18"<<endl;
         return 1;
     }
 
-    cout<<"output:"<<endl;
-
-    stack[0] = 1;
-    stack_size = 1;
-
-    for(a[1] = 2; a[1] <= n; a[1]++)
-    {
-
-        stack_size = stack_push(stack, stack_size, a[1]);
-
-        if (is_valid_stack(stack, stack_size, n))
-        {
-            display(stack, stack_size);
-            total_answer++;
-        }
-
-        for (a[2] = 2; a[2] <= n; a[2]++)
-        {
-            if ((is_inside(stack, stack_size, a[2])))
-                continue;
-
-            stack_size = stack_push(stack, stack_size, a[2]);
-
-            if (is_valid_stack(stack, stack_size, n))
-            {
-                display(stack, stack_size);
-                total_answer++;
-            }
-
-            for (a[3] = 2; a[3] <= n; a[3]++)
-            {
-                if ((is_inside(stack, stack_size, a[3])))
-                    continue;
-
-                stack_size = stack_push(stack, stack_size, a[3]);
-
-                if (is_valid_stack(stack, stack_size, n))
-                {
-                    display(stack, stack_size);
-                    total_answer++;
-                }
-
-                for (a[4] = 2; a[4] <= n; a[4]++)
-                {
-
-                    if ((is_inside(stack, stack_size, a[4])))
-                        continue;
-
-                    stack_size = stack_push(stack, stack_size, a[4]);
-
-
-                    if (is_valid_stack(stack, stack_size, n))
-                    {
-                        display(stack, stack_size);
-                        total_answer++;
-                    }
-
-                    for (a[5] = 2; a[5] <= n; a[5]++)
-                    {
-                        if ((is_inside(stack, stack_size, a[5])))
-                            continue;
-
-                        stack_size = stack_push(stack, stack_size, a[5]);
-
-                        if (is_valid_stack(stack, stack_size, n))
-                        {
-                            display(stack, stack_size);
-                            total_answer++;
-                        }
-
-                        for ( a[6] = 2; a[6] <= n; a[6]++)
-                        {
-                            if ((is_inside(stack, stack_size, a[6])))
-                                continue;
-
-                            stack_size = stack_push(stack, stack_size, a[6]);
-
-                            if (is_valid_stack(stack, stack_size, n))
-                            {
-                               display(stack, stack_size);
-                               total_answer++;
-                            }
-
-                            for ( a[7] = 2; a[7] <= n; a[7]++)
-                            {
-                                if ((is_inside(stack, stack_size, a[7])))
-                                    continue;
-
-                                stack_size = stack_push(stack, stack_size, a[7]);
-
-                                if (is_valid_stack(stack, stack_size, n))
-                                {
-                                    display(stack, stack_size);
-                                    total_answer++;
-                                }
-
-                                for ( a[8] = 2; a[8] <= n; a[8]++)
-                                {
-                                    if ((is_inside(stack, stack_size, a[8])))
-                                        continue;
-
-                                    stack_size = stack_push(stack, stack_size, a[8]);
-
-                                    if (is_valid_stack(stack, stack_size, n))
-                                    {
-                                        display(stack, stack_size);
-                                        total_answer++;
-                                    }
-
-                                    for ( a[9] = 2; a[9] <= n; a[9]++)
-                                    {
-                                        if ((is_inside(stack, stack_size, a[9])))
-                                            continue;
-
-                                        stack_size = stack_push(stack, stack_size, a[9]);
-
-                                        if (is_valid_stack(stack, stack_size, n))
-                                        {
-                                            display(stack, stack_size);
-                                            total_answer++;
-                                        }
-
-                                        for ( a[10] = 2; a[10] <= n; a[10]++)
-                                        {
-                                            if ((is_inside(stack, stack_size, a[10])))
-                                                continue;
-
-                                            stack_size = stack_push(stack, stack_size, a[10]);
-
-                                            if (is_valid_stack(stack, stack_size, n))
-                                            {
-                                                display(stack, stack_size);
-                                                total_answer++;
-                                            }
-
-                                            for ( a[11] = 2; a[11] <= n; a[11]++)
-                                            {
-                                                if ((is_inside(stack, stack_size, a[11])))
-                                                    continue;
-
-                                                stack_size = stack_push(stack, stack_size, a[11]);
-
-                                                if (is_valid_stack(stack, stack_size, n))
-                                                {
-                                                    display(stack, stack_size);
-                                                    total_answer++;
-                                                }
-
-                                                for ( a[12] = 2; a[12] <= n; a[12]++)
-                                                {
-                                                    if ((is_inside(stack, stack_size, a[12])))
-                                                        continue;
-
-                                                    stack_size = stack_push(stack, stack_size, a[12]);
-
-                                                    if (is_valid_stack(stack, stack_size, n))
-                                                    {
-                                                        display(stack, stack_size);
-                                                        total_answer++;
-                                                    }
-
-                                                    for ( a[13] = 2; a[13] <= n; a[13]++)
-                                                    {
-                                                        if ((is_inside(stack, stack_size, a[13])))
-                                                            continue;
-
-                                                        stack_size = stack_push(stack, stack_size, a[13]);
-
-                                                        if (is_valid_stack(stack, stack_size, n))
-                                                        {
-                                                            display(stack, stack_size);
-                                                            total_answer++;
-                                                        }
-
-                                                        for ( a[14] = 2; a[14] <= n; a[14]++)
-                                                        {
-                                                            if ((is_inside(stack, stack_size, a[14])))
-                                                                continue;
-
-                                                            stack_size = stack_push(stack, stack_size, a[14]);
-
-                                                            if (is_valid_stack(stack, stack_size, n))
-                                                            {
-                                                                display(stack, stack_size);
-                                                                total_answer++;
-                                                            }
-
-                                                            for ( a[15] = 2; a[15] <= n; a[15]++)
-                                                            {
-                                                                if ((is_inside(stack, stack_size, a[15])))
-                                                                    continue;
-
-                                                                stack_size = stack_push(stack, stack_size, a[15]);
-
-                                                                if (is_valid_stack(stack, stack_size, n))
-                                                                {
-                                                                    display(stack, stack_size);
-                                                                    total_answer++;
-                                                                }
-
-                                                                for ( a[16] = 2; a[16] <= n; a[16]++)
-                                                                {
-                                                                    if ((is_inside(stack, stack_size, a[16])))
-                                                                        continue;
-
-                                                                    stack_size = stack_push(stack, stack_size, a[16]);
-
-                                                                    if (is_valid_stack(stack, stack_size, n))
-                                                                    {
-                                                                        display(stack, stack_size);
-                                                                        total_answer++;
-                                                                    }
-
-                                                                    stack_size = stack_pop(stack, stack_size);
-                                                                }
-
-                                                                stack_size = stack_pop(stack, stack_size);
-                                                            }
-
-                                                            stack_size = stack_pop(stack, stack_size);
-                                                        }
-
-                                                        stack_size = stack_pop(stack, stack_size);
-                                                    }
-
-
-                                                    stack_size = stack_pop(stack, stack_size);
-                                                }
-
-                                                stack_size = stack_pop(stack, stack_size);
-                                            }
-
-                                            stack_size = stack_pop(stack, stack_size);
-                                        }
-
-                                        stack_size = stack_pop(stack, stack_size);
-                                    }
-
-                                    stack_size = stack_pop(stack, stack_size);
-                                }
-
-
-                                stack_size = stack_pop(stack, stack_size);
-                            }
-
-                            stack_size = stack_pop(stack, stack_size);
-                        }
-
-                        stack_size = stack_pop(stack, stack_size);
-                    }
-
-                    stack_size = stack_pop(stack, stack_size);
-
-                }
-
-                stack_size = stack_pop(stack, stack_size);
-            }
-
-            stack_size = stack_pop(stack, stack_size);
-
-        }
-
-        stack_size = stack_pop(stack, stack_size);
-
-    }
-
-    if (total_answer == 0)
-    {
-        cout<<"no answer."<<endl;
-    }
-    else
-    {
-        cout<<total_answer<<endl;
-    }
+    total_answer_number = permute(list, n, 1, n-1, 0);
+    cout<<total_answer_number<<endl;
 
     return 0;
 }
@@ -344,54 +58,57 @@ bool is_prime(int k)
     return true;
 }
 
-int stack_push(int my_stack[], int current_stack_size, int element)
-{
-    my_stack[current_stack_size] = element;
-    return current_stack_size + 1;
-}
-
-bool is_inside(int my_stack[], int current_stack_size, int element)
-{
-    int index;
-    for (index = 0; index < current_stack_size; index++)
-    {
-        if (my_stack[index] == element)
-            return true;
-    }
-
-    return false;
-}
-
-int stack_pop(int my_stack[], int current_stack_size)
-{
-    my_stack[current_stack_size-1] = 0;
-    return current_stack_size - 1;
-}
-
-bool is_valid_stack(int my_stack[], int stack_size, int n)
+bool is_valid_list(int my_list[], int list_size)
 {
     int index;
 
-    if (stack_size != n)
-        return false;
-
-    for(index = 0; index < stack_size-1; index++)
+    for(index = 0; index < list_size-1; index++)
     {
-        if (!is_prime(my_stack[index] + my_stack[index+1]))
+        if (!is_prime(my_list[index] + my_list[index+1]))
             return false;
     }
 
-    if (!is_prime(my_stack[0] + my_stack[stack_size-1]))
+    if (!is_prime(my_list[0] + my_list[list_size-1]))
         return false;
 
     return true;
 }
 
-void display(int my_stack[], int stack_size)
+void display(int my_list[], int list_size)
 {
     int index;
-    for(index = 0; index < stack_size-1; index++)
-        cout<<my_stack[index]<<" ";
+    for(index = 0; index < list_size-1; index++)
+        cout<<my_list[index]<<" ";
 
-    cout<<my_stack[stack_size-1]<<endl;
+    cout<<my_list[list_size-1]<<endl;
+}
+
+void swap(int list[], int i, int j)
+{
+    int temp;
+    temp = list[i];
+    list[i] = list[j];
+    list[j] = temp;
+}
+
+int permute(int list[], int list_size, int left, int right, int total_answer_number)
+{
+    int index;
+
+    if ((left == right) && is_valid_list(list, list_size))
+    {
+        display(list, list_size);
+        total_answer_number++;
+    }
+    else
+    {
+        for(index = left; index <= right; index++)
+        {
+            swap(list, left, index);
+            total_answer_number = permute(list, list_size, left+1, right, total_answer_number);
+            swap(list, left, index);
+        }
+    }
+
+    return total_answer_number;
 }

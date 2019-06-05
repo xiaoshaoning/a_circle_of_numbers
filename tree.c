@@ -161,7 +161,11 @@ int main()
     printf("input n:\n");
     scanf("%d", &n);
 
-    //n = 6;
+    if (n > 17)
+    {
+        printf("Please input a number <= 17.\n");
+        return 1;
+    }
 
     root = (struct tree_node *) malloc(sizeof(struct tree_node));
     root->value = 1;

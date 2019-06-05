@@ -168,6 +168,8 @@ int main()
     root->parent = 0;
     root->layer_number = 1;
 
+    printf("output:\n");
+
     tree_build(root, n);
 
     tree_iterate(root, n);

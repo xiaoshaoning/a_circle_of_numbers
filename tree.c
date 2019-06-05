@@ -13,7 +13,7 @@ struct tree_node
     int layer_number;
 };
 
-void back_propagate(struct tree_node * my_node)
+void backtrack(struct tree_node * my_node)
 {
     struct tree_node * current_node = my_node;
     do
@@ -24,7 +24,7 @@ void back_propagate(struct tree_node * my_node)
     while(current_node);
 }
 
-int bp(struct tree_node * my_node, int my_array[])
+int bt(struct tree_node * my_node, int my_array[])
 {
     int depth = 0;
     struct tree_node * current_node = my_node;
@@ -49,8 +49,8 @@ int tree_iterate(struct tree_node * my_node, int n)
     //if ((my_node->son_number == 0) && (my_node->layer_number == n) && is_prime(my_node->value+1))
     if ((my_node->son_number == 0) && (my_node->layer_number == n))
     {
-        //back_propagate(my_node);
-        bp(my_node, my_array);
+        //backtrack(my_node);
+        bt(my_node, my_array);
 
         for(index = n-1; index >= 0; index--)
             printf("%d ", my_array[index]);
@@ -98,7 +98,7 @@ void tree_build(struct tree_node * my_node, int n)
     int my_value = my_node->value;
     int temp;
 
-    depth = bp(my_node, used_number);
+    depth = bt(my_node, used_number);
 
     if ((depth == n) && is_prime(my_value+1))
     {

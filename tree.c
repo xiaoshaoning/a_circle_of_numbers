@@ -42,11 +42,9 @@ int bt(struct tree_node * my_node, int my_array[])
 int tree_iterate(struct tree_node * my_node, int n)
 {
     int index;
-    //printf("%d\n", my_node->value);
 
     int my_array[18];
 
-    //if ((my_node->son_number == 0) && (my_node->layer_number == n) && is_prime(my_node->value+1))
     if ((my_node->son_number == 0) && (my_node->layer_number == n))
     {
         //backtrack(my_node);

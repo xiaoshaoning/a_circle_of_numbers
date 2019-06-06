@@ -44,7 +44,7 @@ int tree_iterate(struct tree_node * my_node, int n)
     int index;
     //printf("%d\n", my_node->value);
 
-    int my_array[17];
+    int my_array[18];
 
     //if ((my_node->son_number == 0) && (my_node->layer_number == n) && is_prime(my_node->value+1))
     if ((my_node->son_number == 0) && (my_node->layer_number == n))
@@ -52,9 +52,10 @@ int tree_iterate(struct tree_node * my_node, int n)
         //backtrack(my_node);
         bt(my_node, my_array);
 
-        for(index = n-1; index >= 0; index--)
+        for(index = n-1; index >= 1; index--)
             printf("%d ", my_array[index]);
 
+        printf("%d", my_array[0]);
         printf("\n");
         solution_number++;
     }
@@ -83,9 +84,9 @@ int is_prime(int k)
 
 void tree_build(struct tree_node * my_node, int n)
 {
-    int used_number[17];
+    int used_number[18];
     int depth;
-    int available_number_list[17];
+    int available_number_list[18];
     int available_number_list_size = 0;
     int ii, jj;
     int available;
@@ -161,9 +162,9 @@ int main()
     printf("input n:\n");
     scanf("%d", &n);
 
-    if (n > 17)
+    if (n > 18)
     {
-        printf("Please input a number <= 17.\n");
+        printf("Please input a number <= 18.\n");
         return 1;
     }
 

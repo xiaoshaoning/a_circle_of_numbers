@@ -1,2 +1,8 @@
 circle_with_prime_sum
 *~
+.gitignore
+tree
+tree_backup.c
+tree_test
+tree_test.c
+18.txt

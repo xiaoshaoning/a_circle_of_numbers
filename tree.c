@@ -150,6 +150,20 @@ void tree_build(struct tree_node * my_node, int n)
     }
 }
 
+void tree_destroy(struct tree_node * my_node)
+{
+    int ii;
+    int son_number = my_node->son_number;
+
+    if (son_number > 0)
+    {
+        for(ii = 0; ii < son_number; ii++)
+            tree_destroy(my_node->sons[ii]);
+    }
+
+    free(my_node);
+}
+
 int main()
 {
     struct tree_node * root;
@@ -179,7 +193,7 @@ int main()
 
     printf("%d\n", solution_number);
 
-    //free(root);
+    tree_destroy(root);
 
     return 0;
 }
